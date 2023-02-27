@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="image">image</label>
+                                <label class="col-sm-2 col-form-label" for="image">image upload</label>
                                 <div class="col-sm-10">
                                     <input type="file" name="image" id="image" class="form-control phone-mask"
                                         placeholder="658 799 8941" aria-label="658 799 8941"
