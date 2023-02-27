@@ -17,17 +17,9 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="address">Address</label>
+                            <label class="col-sm-2 col-form-label" for="serial">serial</label>
                             <div class="col-sm-10">
-                                <input type="text" name="address" class="form-control" id="address" placeholder="ACME Inc." />
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="designation">Designation</label>
-                            <div class="col-sm-10">
-                                <div class="input-group input-group-merge">
-                                    <input type="text" name="designation"   id="designation" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-default-Serial" />
-                                </div>
+                                <input type="text" name="serial" class="form-control" id="serial" placeholder="ACME Inc." />
                             </div>
                         </div>
                         <div class="row mb-3">

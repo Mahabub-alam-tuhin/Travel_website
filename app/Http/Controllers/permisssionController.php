@@ -14,8 +14,7 @@ class permisssionController extends Controller
     public function savePermission(Request $request){
         $this->create=new permission();
         $this->create->title=$request->title;
-        $this->create->address=$request->address;
-        $this->create->designation=$request->designation;
+        $this->create->serial=$request->serial;
         $this->create->Phone=$request->Phone;
         $this->create->save();
         return back()->with('message','info create successfully');
@@ -33,8 +32,7 @@ class permisssionController extends Controller
     public function update(Request $request,$id){
         $this->permission=permission::find($id);
         $this->permission->title=$request->title;
-        $this->permission->address=$request->address;
-        $this->permission->designation=$request->designation;
+        $this->permission->serial=$request->serial;
         $this->permission->Phone=$request->Phone;
 
         $this->permission->update();

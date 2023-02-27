@@ -15,15 +15,9 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">Address</label>
+                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">serial</label>
                                 <div class="col-sm-9">
-                                    <input type="text" value="{{  $permission->address }}" name="address" class="form-control" id="inputPhoneNo2" placeholder="address">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputEmailAddress2" class="col-sm-3 col-form-label">Designation</label>
-                                <div class="col-sm-9">
-                                    <input type="text" value="{{$permission->designation}}" name="designation" class="form-control" id="inputEmailAddress2" placeholder="designation">
+                                    <input type="text" value="{{  $permission->serial }}" name="serial" class="form-control" id="inputPhoneNo2" placeholder="serial">
                                 </div>
                             </div>
                             <div class="row mb-3">

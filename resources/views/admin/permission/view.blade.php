@@ -16,8 +16,7 @@
                     <tr>
                         <th>ID</th>
                         <th>title</th>
-                        <th>Address</th>
-                        <th>Designation</th>
+                        <th>serial</th>
                         <th>Phone</th>
                         <th>Action</th>
                     </tr>
@@ -29,8 +28,7 @@
                         <tr>
                             <td>{{$i++}}</td>
                             <td>{{$permission->title}}</td>
-                            <td>{{$permission->address}}</td>
-                            <td>{{$permission->designation}}</td>
+                            <td>{{$permission->serial}}</td>
                             <td>{{$permission->Phone}}</td>
 
 

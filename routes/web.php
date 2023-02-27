@@ -70,14 +70,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     });
 
     Route::prefix('permission')->group(function () {
-        Route::get('/create', [permisssionController::class, 'create'])->name('dashboard.permission.create');
+        Route::get('/create', [permisssionController::class, 'create'])->middleware('canCreate')->name('dashboard.permission.create');
         Route::post('/savePermission', [permisssionController::class, 'savePermission'])->name('dashboard.permission.savePermission');
         Route::get('/view', [permisssionController::class, 'view'])->name('dashboard.permission.view');
-        Route::get('/edit/{id}', [permisssionController::class, 'edit'])->name('dashboard.permission.edit');
+        Route::get('/edit/{id}', [permisssionController::class, 'edit'])->middleware('canEdit')->name('dashboard.permission.edit');
         Route::post('/update/{id}', [permisssionController::class, 'update'])->name('dashboard.permission.update');
         Route::get('/delete/{id}', [permisssionController::class, 'delete'])->name('dashboard.permission.delete');
     });
-    Route::prefix('permit')->group(function () {
+
+        Route::prefix('permit')->middleware(['auth'])->group(function () {
         Route::get('/create', [permitController::class, 'create'])->name('dashboard.permit.create');
         Route::post('/store', [permitController::class, 'store'])->name('dashboard.permit.store');
     });
