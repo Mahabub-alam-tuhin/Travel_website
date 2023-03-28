@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\user_permissions;
+
 use Illuminate\Support\Facades\Auth;
 
 

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class roleController extends Controller
 {
-    public $create;
+    public $create,$userRole;
    public function create(){
        return view('admin.role_menu.create');
    }
@@ -47,3 +47,6 @@ class roleController extends Controller
         return redirect()->route('dashboard.view');
     }
 }
+
+
+?>

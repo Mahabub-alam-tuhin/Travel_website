@@ -104,5 +104,156 @@
     </li>
 
 
+    {{-- spot --}}
 
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="spot">spot</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.spot.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.spot.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>    
+
+    {{-- District Section --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="District">District</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.district.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.district.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {{-- Division section --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="Division">Division</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.division.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.division.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {{-- Union Section --}}
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="union">union</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.union.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.union.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {{-- Upazila section --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="upazila">upazila</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.upazila.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.upazila.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {{-- resort_Management --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="resort_Management">resort_Management</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.resort_Management.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.resort_Management.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {{-- tour_guideence --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="tour_guideence">tour_guideence</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.tour_guideence.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.tour_guideence.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 </ul>

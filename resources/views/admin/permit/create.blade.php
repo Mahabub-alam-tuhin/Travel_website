@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="image">permission</label>
+                            <label class="col-sm-2 col-form-label" for="permission">permission</label>
                             <div class="col-sm-10">
                                 @foreach($permissions as $permission)
                                     <div class="form-check">

@@ -59,7 +59,7 @@
                             <div class="row mb-3">
                                 <label for="inputAddress4" class="col-sm-3 col-form-label">image</label>
                                 <div class="col-sm-9">
-                                    <input type="file" name="image" class="form-control" id="inputAddress4" rows="3" placeholder="Address">{{$saveuser->image}}</input>
+                                    <input type="file" name="image" class="form-control" id="inputAddress4" rows="3" placeholder="Address">{{$saveuser->image}}</>
                                 </div>
                             </div>
 
