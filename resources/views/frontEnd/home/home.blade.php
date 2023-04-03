@@ -3,7 +3,6 @@
     Home
 @endsection
 @section('content')
-
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
@@ -53,43 +52,48 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
+                                    <form action="{{ route('frontEnd.search.search') }}" method="get">
+                                        <select class="custom-select px-4" name="division" style="height: 47px;">
+                                            <option selected>Division</option>
+                                            @foreach ($divisions as $division)
+                                                <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                            @endforeach
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3 mb-md-0">
+                                    <select class="custom-select px-4" name="district" style="height: 47px;">
+                                        <option selected>District</option>
+                                        @foreach ($districts as $district)
+                                            <option value="{{ $district->id }}">{{ $district->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
+                                    <div class="date" id="date2" data-target-input="nearest">
+                                        <input type="text" name="person" class="form-control p-4 datetimepicker-input"
+                                            placeholder="Person" data-target="#date2" data-toggle="datetimepicker" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
+                                        <input type="text" name="price" class="form-control p-4 datetimepicker-input"
+                                            placeholder="price" data-target="#date2" data-toggle="datetimepicker" />
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
+                        <button class="btn btn-primary btn-block" type="submit"
+                            style="height: 47px; margin-top: -2px;">Submit</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -103,14 +107,17 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{{ asset('frontEndAsset') }}/img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{{ asset('frontEndAsset') }}/img/about.jpg"
+                            style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
                         <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
                         <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit
+                            sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat
+                            sed diam duo</p>
                         <div class="row mb-4">
                             <div class="col-6">
                                 <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/about-1.jpg" alt="">
@@ -134,7 +141,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
+                            style="height: 100px; width: 100px;">
                             <i class="fa fa-2x fa-money-check-alt text-white"></i>
                         </div>
                         <div class="d-flex flex-column">
@@ -145,7 +153,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
+                            style="height: 100px; width: 100px;">
                             <i class="fa fa-2x fa-award text-white"></i>
                         </div>
                         <div class="d-flex flex-column">
@@ -156,7 +165,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3"
+                            style="height: 100px; width: 100px;">
                             <i class="fa fa-2x fa-globe text-white"></i>
                         </div>
                         <div class="d-flex flex-column">
@@ -251,21 +261,24 @@
                     <div class="service-item bg-white text-center mb-2 py-5 px-4">
                         <i class="fa fa-2x fa-route mx-auto mb-4"></i>
                         <h5 class="mb-2">Travel Guide</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est
+                            amet labore</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center mb-2 py-5 px-4">
                         <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
                         <h5 class="mb-2">Ticket Booking</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est
+                            amet labore</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center mb-2 py-5 px-4">
                         <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
                         <h5 class="mb-2">Hotel Booking</h5>
-                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                        <p class="m-0">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est
+                            amet labore</p>
                     </div>
                 </div>
             </div>
@@ -283,27 +296,37 @@
             </div>
             <div class="row">
                 @foreach ($resorts as $saveresorts)
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="{{ route('frontEnd.details.details',$saveresorts->id) }}">
-                    <div class="package-item bg-white mb-2">
-                        <img class="img-fluid" src="{{ asset('/').$saveresorts->image}}">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{$saveresorts->divisions->name ??''}}</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $saveresorts->day }}</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ $saveresorts->person }} Person</small>
-                            </div>
-                            <a class="h5 text-decoration-none" href="{{ route('frontEnd.details.details',$saveresorts->id) }}">{{ $saveresorts->name }}</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">{{ $saveresorts->entry_fee }}</h5>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="{{ route('frontEnd.details.details', $saveresorts->id) }}">
+                            <div class="package-item bg-white mb-2">
+                                <div
+                                    style="height:250px; overflow:hidden;background-image:url('{{ asset($saveresorts->image) }}');background-size:cover;background-position:center;">
+
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <small class="m-0"><i
+                                                class="fa fa-map-marker-alt text-primary mr-2"></i>{{ $saveresorts->divisions->name ?? '' }}</small>
+                                        <small class="m-0"><i
+                                                class="fa fa-calendar-alt text-primary mr-2"></i>{{ $saveresorts->day }}</small>
+                                        <small class="m-0"><i
+                                                class="fa fa-user text-primary mr-2"></i>{{ $saveresorts->person }}
+                                            Person</small>
+                                    </div>
+                                    <a class="h5 text-decoration-none"
+                                        href="{{ route('frontEnd.details.details', $saveresorts->id) }}">{{ $saveresorts->name }}</a>
+                                    <div class="border-top mt-4 pt-4">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5
+                                                <small>(250)</small>
+                                            </h6>
+                                            <h5 class="m-0">{{ $saveresorts->entry_fee }}</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                   </a>
-                </div>       
                 @endforeach
 
 
@@ -322,13 +345,16 @@
                         <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Mega Offer</h6>
                         <h1 class="text-white"><span class="text-primary">30% OFF</span> For Honeymoon</h1>
                     </div>
-                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
+                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum
+                        ut sed eos,
                         ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
                         dolor</p>
                     <ul class="list-inline text-white m-0">
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam
+                        </li>
                         <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-5">
@@ -339,10 +365,12 @@
                         <div class="card-body rounded-bottom bg-white p-5">
                             <form>
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
+                                    <input type="text" class="form-control p-4" placeholder="Your name"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
+                                    <input type="email" class="form-control p-4" placeholder="Your email"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
                                     <select class="custom-select px-4" style="height: 47px;">
@@ -373,74 +401,32 @@
                 <h1>Our Travel Guides</h1>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/team-1.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                @foreach ($saveguides as $guide)
+                    <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                        <div class="team-item bg-white mb-4">
+                            <div class="team-img position-relative overflow-hidden">
+                                <div
+                                style="height:250px; overflow:hidden;background-image:url('{{ asset($guide->image) }}');background-size:cover;background-position:center;">
+
+                            </div>
+                                <div class="team-social">
+                                    <a class="btn btn-outline-primary btn-square" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h5 class="text-truncate">{{ $guide->name }}</h5>
+                                <p class="m-0">Designation</p>
                             </div>
                         </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/team-4.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -456,36 +442,44 @@
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <div class="text-center pb-4">
-                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-1.jpg" style="width: 100px; height: 100px;" >
+                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-1.jpg"
+                        style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
+                            eos labore diam
                         </p>
                         <h5 class="text-truncate">Client Name</h5>
                         <span>Profession</span>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-2.jpg" style="width: 100px; height: 100px;" >
+                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-2.jpg"
+                        style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
+                            eos labore diam
                         </p>
                         <h5 class="text-truncate">Client Name</h5>
                         <span>Profession</span>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-3.jpg" style="width: 100px; height: 100px;" >
+                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-3.jpg"
+                        style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
+                            eos labore diam
                         </p>
                         <h5 class="text-truncate">Client Name</h5>
                         <span>Profession</span>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-4.jpg" style="width: 100px; height: 100px;" >
+                    <img class="img-fluid mx-auto" src="{{ asset('frontEndAsset') }}/img/testimonial-4.jpg"
+                        style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
-                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                        <p class="mt-5">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
+                            eos labore diam
                         </p>
                         <h5 class="text-truncate">Client Name</h5>
                         <span>Profession</span>
@@ -508,7 +502,8 @@
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-1.jpg"
+                                alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -518,16 +513,19 @@
                             <div class="d-flex mb-2">
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
                                 <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
+                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours &
+                                    Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo
+                                diam amet</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-2.jpg"
+                                alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -537,16 +535,19 @@
                             <div class="d-flex mb-2">
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
                                 <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
+                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours &
+                                    Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo
+                                diam amet</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-3.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ asset('frontEndAsset') }}/img/blog-3.jpg"
+                                alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -556,9 +557,11 @@
                             <div class="d-flex mb-2">
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
                                 <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
+                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours &
+                                    Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo
+                                diam amet</a>
                         </div>
                     </div>
                 </div>
@@ -567,5 +570,3 @@
     </div>
     <!-- Blog End -->
 @endsection
-
-

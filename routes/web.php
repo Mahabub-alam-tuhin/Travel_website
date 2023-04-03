@@ -41,12 +41,13 @@ Route::get('/data', function () {
     return dd(\App\Models\permission::with("permissions")->get()->toArray());
 });
 
-Route::get('/', [travelController::class, 'index'])->name('');
-Route::get('/about', [travelController::class, 'index'])->name('about');
-Route::get('/service', [travelController::class, 'index'])->name('service');
-Route::get('/contact', [travelController::class, 'index'])->name('contact');
+Route::get('/', [travelController::class, 'index'])->name('home');
+Route::get('/about', [travelController::class, 'about'])->name('about');
+Route::get('/service', [travelController::class, 'service'])->name('service');
+Route::get('/contact', [travelController::class, 'contact'])->name('contact');
 Route::get('/tour-packages', [travelController::class, 'tourPackages'])->name('tour-packages');
 Route::get('/details/{id}', [travelController::class, 'details'])->name('frontEnd.details.details');
+Route::get('/search', [travelController::class, 'search'])->name('frontEnd.search.search');
 
 
 
