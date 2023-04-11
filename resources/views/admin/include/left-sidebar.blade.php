@@ -256,4 +256,22 @@
             </li>
         </ul>
     </li>
+       
+
+    {{-- comment reply --}}
+
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="comment_reply">comment_reply </div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.comment_reply.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 </ul>

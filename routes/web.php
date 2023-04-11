@@ -15,7 +15,8 @@ use App\Http\Controllers\unionController;
 use App\Http\Controllers\upazilaController;
 use App\Http\Controllers\resort_ManagementController;
 use App\Http\Controllers\tour_guideenceController;
-
+use App\Http\Controllers\commentController;
+use App\Http\Controllers\comment_replyController;
 
 
 /*
@@ -159,5 +160,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('/delete/{id}', [tour_guideenceController::class, 'delete'])->name('admin.tour_guideence.delete');
 
     });
+    
+    Route::prefix('comment')->group(function () {
+        Route::post('/create', [commentController::class, 'create'])->name('frontEnd.comment.create');
 
+    });
+
+    Route::prefix('comment_reply')->group(function(){
+        Route::get('/view',[comment_replyController::class,'view'])->name('admin.comment_reply.view');
+        Route::get('/reply/{id}', [comment_replyController::class, 'reply'])->name('admin.comment_reply.reply');
+        Route::post('/update/{id}', [comment_replyController::class, 'update'])->name('admin.comment_reply.update');
+        Route::get('/delete/{id}', [comment_replyController::class, 'delete'])->name('admin.comment_reply.delete');
+
+    });
 });

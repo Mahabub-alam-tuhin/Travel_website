@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\District;
 use App\Models\Division;
+use App\Models\saveComment;
 use App\Models\Saveguide;
 use App\Models\saveresort;
 use App\Models\Union;
@@ -22,8 +23,10 @@ class travelController extends Controller
     return view('frontEnd.home.home',compact('resorts','divisions','districts','upazilas','unions','saveguides'));
    }
    public function details($id){
-        return view('frontEnd.details.details', [
+    $comment = saveComment::all();
+        return view('frontEnd.details.details',compact('comment'), [
             'resorts' => saveresort::where('id',$id)->with(['saveguides'])->first()
+             
         ]);
     }
     public function search(Request $request){

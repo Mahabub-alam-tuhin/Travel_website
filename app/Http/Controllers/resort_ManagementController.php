@@ -71,8 +71,10 @@ class resort_ManagementController extends Controller
         $districts = District::all();
         $upazilas = Upazila::all();
         $unions = Union::all();
+        $guids=Saveguide::all();
         $saveresorts = saveresort::find($id);
-        return view('admin.resort_Management.edit', compact('saveresorts', 'divisions', 'districts', 'upazilas', 'unions'));
+        
+        return view('admin.resort_Management.edit', compact('saveresorts', 'divisions', 'districts', 'upazilas', 'unions','guids'));
     }
     public function upadte(Request $request, $id)
     {
