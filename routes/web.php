@@ -17,8 +17,10 @@ use App\Http\Controllers\resort_ManagementController;
 use App\Http\Controllers\tour_guideenceController;
 use App\Http\Controllers\commentController;
 use App\Http\Controllers\comment_replyController;
-
-
+use App\Http\Controllers\bookingController;
+use App\Http\Controllers\show_bookingController;
+use App\Http\Controllers\carouselController;
+use App\Http\Controllers\destinationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +52,12 @@ Route::get('/tour-packages', [travelController::class, 'tourPackages'])->name('t
 Route::get('/details/{id}', [travelController::class, 'details'])->name('frontEnd.details.details');
 Route::get('/search', [travelController::class, 'search'])->name('frontEnd.search.search');
 
+
+Route::prefix ('booking')->group(function(){
+    Route::get('/create/{id}',[bookingController::class,'create'])->name('frontEnd.booking.create');
+    Route::post('/saveBooking', [bookingController::class, 'saveBooking'])->name('frontEnd.booking.saveBooking');
+
+});
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -168,9 +176,41 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::prefix('comment_reply')->group(function(){
         Route::get('/view',[comment_replyController::class,'view'])->name('admin.comment_reply.view');
+        Route::post('/savereply',[comment_replyController::class,'savereply'])->name('admin.comment_reply.savereply');
         Route::get('/reply/{id}', [comment_replyController::class, 'reply'])->name('admin.comment_reply.reply');
         Route::post('/update/{id}', [comment_replyController::class, 'update'])->name('admin.comment_reply.update');
         Route::get('/delete/{id}', [comment_replyController::class, 'delete'])->name('admin.comment_reply.delete');
 
     });
+    Route::prefix ('show_booking')->group(function(){
+        Route::get('/view',[show_bookingController::class,'view'])->name('admin.show_booking.view');
+        Route::get('/details/{id}',[show_bookingController::class,'details'])->name('admin.show_booking.details');
+        Route::post('/update/{id}', [show_bookingController::class, 'update'])->name('admin.show_booking.update');
+        Route::get('/delete/{id}', [show_bookingController::class, 'delete'])->name('admin.show_booking.delete');
+
+    });
+    
+    Route::prefix('carousel')->group(function () {
+        Route::get('/create', [carouselController::class, 'create'])->name('admin.carousel.create');
+        Route::post('/savecarousel', [carouselController::class, 'savecarousel'])->name('admin.carousel.savecarousel');
+        Route::get('/view', [carouselController::class, 'view'])->name('admin.carousel.view');
+        Route::get('/edit/{id}', [carouselController::class, 'edit'])->name('admin.carousel.edit');
+        Route::post('/update/{id}', [carouselController::class, 'update'])->name('admin.carousel.update');
+        Route::get('/delete/{id}', [carouselController::class, 'delete'])->name('admin.carousel.delete');
+
+    });
+    
+     
+    Route::prefix('destination')->group(function () {
+        Route::get('/create', [destinationController::class, 'create'])->name('admin.destination.create');
+        Route::post('/savedestination', [destinationController::class, 'savedestination'])->name('admin.destination.savedestination');
+        Route::get('/view', [destinationController::class, 'view'])->name('admin.destination.view');
+        Route::get('/edit/{id}', [destinationController::class, 'edit'])->name('admin.destination.edit');
+        Route::post('/update/{id}', [destinationController::class, 'update'])->name('admin.destination.update');
+        Route::get('/delete/{id}', [destinationController::class, 'delete'])->name('admin.destination.delete');
+
+
+    });
+
+  
 });

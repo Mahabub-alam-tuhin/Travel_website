@@ -7,26 +7,29 @@
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{ asset('frontEndAsset') }}/img/carousel-1.jpg" alt="Image">
+                @foreach ( $carousel as $key=>$carouseler )
+                {{-- <div class="carousel-item active">
+                    <img class="w-100" src="{{ asset('frontEndAsset') }}/img/carousel-1.jpg" alt="Image" >
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                             <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{{ route('tour-packages') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{ asset('frontEndAsset') }}/img/carousel-2.jpg" alt="Image">
+                </div> --}}
+                <div class="carousel-item {{ $key==0?'active':'' }}">
+                    <img class="w-100"  src="{{ asset('/') . $carouseler->image }}" alt="Image" class="img-fluid mr-3 mt-1"  width=1920px; height=1080px>
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                            <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <h1 class="display-3 text-white mb-md-4">{{ $carouseler->title }}</h1>
+                            <a href="{{ route('tour-packages') }}" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
-                </div>
+                </div>  
+                @endforeach
+             
             </div>
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                 <div class="btn btn-dark" style="width: 45px; height: 45px;">
@@ -53,7 +56,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <form action="{{ route('frontEnd.search.search') }}" method="get">
-                                        <select class="custom-select px-4" name="division" style="height: 47px;">
+                                        <select class="custom-select px-4" name="division" onchange="change_division()" id="division_id"  style="height: 47px;">
                                             <option selected>Division</option>
                                             @foreach ($divisions as $division)
                                                 <option value="{{ $division->id }}">{{ $division->name }}</option>
@@ -63,7 +66,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" name="district" style="height: 47px;">
+                                    <select class="custom-select px-4" name="district" onchange="change_district()" id="district_id" style="height: 47px;">
                                         <option selected>District</option>
                                         @foreach ($districts as $district)
                                             <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -189,60 +192,25 @@
                 <h1>Explore Top Destination</h1>
             </div>
             <div class="row">
+                @foreach ($Destination as $nation)
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-1.jpg" alt="">
+                            <div
+                                style="height:250px; overflow:hidden;background-image:url('{{ asset($nation->image) }}');background-size:cover;background-position:center;">
+
+                            </div>
                         <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United States</h5>
-                            <span>100 Cities</span>
+                            <h5 class="text-white">{{ $nation->title }}</h5>
+                            <span>{{ $nation->city }}</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United Kingdom</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-3.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Australia</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-4.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">India</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-5.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">South Africa</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/destination-6.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Indonesia</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
+             
+             
+               
+             
+               
             </div>
         </div>
     </div>
@@ -568,5 +536,54 @@
             </div>
         </div>
     </div>
+
+    
+    <script>
+        function change_division() {
+            let division_id = event.target.value;
+            fetch('/district/district-by-division', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').attributes.content.value
+                    },
+                    body: JSON.stringify({
+                        division_id
+                    })
+                })
+                .then(res => res.json())
+                .then(res => {
+                    let district_id = document.querySelector(`select[id="district_id"]`)
+                    district_id.innerHTML = res.map(i => `<option value="${i.id}">${i.name}</option>`).join('')
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+        function change_districts() {
+            let district_id = event.target.value;
+            fetch('/upazila/upazila_by_district', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').attributes.content.value
+                    },
+                    body: JSON.stringify({
+                        district_id
+                    })
+                })
+                .then(res => res.json())
+                .then(res => {
+                    let upazila_id = document.querySelector(`select[id="upazila_id"]`)
+                    upazila_id.innerHTML = res.map(i => `<option value="${i.id}">${i.name}</option>`).join('')
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+        
+    </script>
     <!-- Blog End -->
 @endsection

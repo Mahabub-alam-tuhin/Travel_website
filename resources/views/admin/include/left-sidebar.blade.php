@@ -274,4 +274,66 @@
             </li>
         </ul>
     </li>
+
+      {{-- Booking form--}}
+
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="Booking_form">Booking Form </div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.show_booking.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+     {{-- carousel --}}
+
+     <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="carousel">carousel</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.carousel.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.carousel.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+
+    {{-- {{ Destination  }} --}}
+    
+    <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="Destination">Destination</div>
+
+        </a>
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="{{ route('admin.destination.create') }}" class="menu-link">
+                    <div data-i18n="create">create</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('admin.destination.view') }}" class="menu-link">
+                    <div data-i18n="view">view</div>
+                </a>
+            </li>
+        </ul>
+    </li>
 </ul>

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class replycomment extends Model
 {
     use HasFactory;
+    
 }

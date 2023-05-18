@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class saveComment extends Model
 {
     use HasFactory;
+
+    function reply(){
+        return $this->hasOne(replycomment::class,'comment_id','id');
+    }
 }

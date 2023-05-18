@@ -26,7 +26,7 @@
                             </div>
                             <h2 class="mb-3">{{ $resorts->name }}</h2>
                             <p>{!! $resorts->description !!}</p>
-
+                            <a href="{{ route ('frontEnd.booking.create',$resorts->id) }}" class="btn btn-primary mt-1">Book Now</a>
 
                         </div>
                     </div>
@@ -101,8 +101,14 @@
                                 <p>{{ $savecomment->email }}</p>
                                 <p>{{ $savecomment->comment }}</p>
                                 <p>{{ $savecomment->message }}</p>
-
                                 <button class="btn btn-sm btn-outline-primary">Reply</button>
+                               <div class="media mt-4" style=margin-left:60px;>
+                                <img src="{{ asset('/') . $savecomment->image }}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                @if ($savecomment->reply)
+                                <p>{{ $savecomment->reply->reply }}</p>
+
+                                @endif
+                               </div>
                             </div>
                         </div>
                     </div>

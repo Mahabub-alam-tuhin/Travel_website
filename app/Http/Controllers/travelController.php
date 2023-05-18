@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\destination;
 use App\Models\District;
 use App\Models\Division;
+use App\Models\Savecarousel;
 use App\Models\saveComment;
 use App\Models\Saveguide;
 use App\Models\saveresort;
@@ -19,11 +21,14 @@ class travelController extends Controller
     $upazilas = Upazila::all();
     $unions = Union::all();
     $saveguides = Saveguide::all();
+    $carousel = Savecarousel::all();
+    $Destination = destination::all();
+ 
     $resorts=saveresort::with(['divisions','district','upazila','union'])->paginate(6);
-    return view('frontEnd.home.home',compact('resorts','divisions','districts','upazilas','unions','saveguides'));
+    return view('frontEnd.home.home',compact('resorts','divisions','districts','upazilas','unions','saveguides','carousel','Destination'));
    }
    public function details($id){
-    $comment = saveComment::all();
+    $comment = saveComment::with(['reply'])->get();
         return view('frontEnd.details.details',compact('comment'), [
             'resorts' => saveresort::where('id',$id)->with(['saveguides'])->first()
              

@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header border-bottom">
             <h5 class="card-title mb-3">Search Filter</h5>
-            <form action="{{ route ('admin.comment_reply.update',$comment->id)}}" method="post">
+            <form action="{{ route ('admin.comment_reply.savereply',$comment->id)}}" method="post">
                 @csrf
                 <div class="card">
                     <div class="card-body">
@@ -17,7 +17,7 @@
                             <div class="row mb-3">
                                 <label for="inputPhoneNo2" class="col-sm-3 col-form-label">comment_id</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="comment_id" class="form-control" id="inputPhoneNo2" placeholder="comment_id">
+                                    <input type="text"  value="{{ $comment->id }}" name="comment_id" class="form-control" id="inputPhoneNo2" placeholder="comment_id">
                                 </div>
                             </div> 
                             <div class="row mb-3">

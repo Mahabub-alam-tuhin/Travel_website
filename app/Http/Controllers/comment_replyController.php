@@ -12,6 +12,15 @@ class comment_replyController extends Controller
         'comment'=>savecomment::all()
             ]);       
     }
+    public function savereply(Request $request)
+    {
+         $comment = new replycomment();
+         $comment->comment_id=$request->comment_id;
+         $comment->reply=$request->reply;
+         $comment->save();
+        return back()->with('message','info create successfully');
+    }
+
    
 
     public function reply($id){
@@ -21,10 +30,10 @@ class comment_replyController extends Controller
 
     public function update(Request $request, $id){
         
-        $this->comment=new replycomment();
-        $this->comment->comment_id= $id;
-        $this->comment->reply= $request->reply;
-        $this->comment->update();
+        $comment=new replycomment();
+        $comment->comment_id= $id;
+        $comment->reply= $request->reply;
+        $comment->update();
         return redirect()->route('admin.comment_reply.view');
     }
     public function delete($id)
