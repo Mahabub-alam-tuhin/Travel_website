@@ -109,8 +109,8 @@
                     data: {
                         labels: ['jan', 'feb', 'mar', 'apr', 'may'],
                         datasets: [{
-                                data: {{ json_encode( $visitors ) }},
-                                label: "visitor",
+                                data: {{ json_encode( $monthly_bookings ) }},
+                                label: "booking",
                                 borderColor: "tomato",
                                 tension: .5,
                                 pointStyle: "circle",
@@ -159,7 +159,7 @@
                                     display: !0
                                 },
                                 min: 0,
-                                max: 10000,
+                                max: 60,
                                 ticks: {
                                     color: textMuted,
                                     stepSize: 100

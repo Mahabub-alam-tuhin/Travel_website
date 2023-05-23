@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
+    use HasFactory;
+    protected $guarded = [];
     function resort(){
         return $this->hasOne(booking::class,'resort_id','id');
     }
