@@ -34,8 +34,8 @@
 
 
                             <td>
-                                <a href="{{route('dashboard.edit',$userRole->id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{route('dashboard.delete',$userRole->id)}}" class="btn btn-danger">Delete</a>
+                                <a href="{{route('user.role.edit',$userRole->id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('user.role.delete',$userRole->id)}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

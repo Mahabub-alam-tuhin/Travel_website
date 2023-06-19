@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('resort_id')->nullable();;
             $table->text('name');
             $table->text('email');
             $table->string('phone');
-            $table->text('address');
+            $table->string('price')->nullable();
+            $table->text('address');            
             $table->string('status',100)->nullable();
             $table->timestamps();
         });

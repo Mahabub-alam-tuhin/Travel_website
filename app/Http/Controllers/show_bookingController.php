@@ -23,6 +23,7 @@ class show_bookingController extends Controller
         $details->name= $request->name;
         $details->email= $request->email;
         $details->phone= $request->phone;
+        $details->price= $request->price;
         $details->address= $request->address;
         $details->status= $request->status;
         $details->update();

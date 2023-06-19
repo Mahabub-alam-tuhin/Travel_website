@@ -38,6 +38,11 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
+                            <input type="text" class="form-control p-4" id="price" placeholder="price"
+                                required="required" name="price" data-validation-required-message="Please enter a price" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
                             <textarea class="form-control py-3 px-4" name="address" rows="5" id="address" placeholder="address"
                                 required="required"
                                 data-validation-required-message="Please enter your address"></textarea>

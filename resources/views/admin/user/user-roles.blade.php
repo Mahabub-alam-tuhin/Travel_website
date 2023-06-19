@@ -1,8 +1,9 @@
 @extends('admin.master')
 @section('content')
-    <div class="row">
+    <div class="row justify-content-center">
+
         <!-- Basic Layout -->
-        <div class="col-xxl">
+        <div class="col-md-8">
             <form action="{{ route('dashboard.saveUser') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card mb-4">
@@ -70,7 +71,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="image">image upload</label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="image" id="image" class="form-control phone-mask"
+                                    <input type="file" name="image" id="image" class="formphp a-control phone-mask"
                                         placeholder="658 799 8941" aria-label="658 799 8941"
                                         aria-describedby="basic-default-image" />
                                 </div>

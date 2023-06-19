@@ -18,6 +18,7 @@
                         <th>name</th>
                         <th>email</th>
                         <th>phone</th>
+                        <th>price</th>
                         <th>address</th>
                         <th>Action</th>
                         
@@ -32,6 +33,7 @@
                             <td>{{$books->name}}</td>
                             <td>{{$books->email}}</td>
                             <td>{{$books->phone}}</td>
+                            <td>{{$books->price}}</td>
                             <td>{{$books->address}}</td>
 
 

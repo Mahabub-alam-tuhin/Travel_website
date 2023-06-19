@@ -42,14 +42,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Total Sales -->
         <div class="col-xl-2 col-md-4 col-6 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="badge p-2 bg-label-info mb-2 rounded"><i class="ti ti-chart-bar ti-md"></i></div>
-                    <h5 class="card-title mb-1 pt-2">Total Sales</h5>
-                    <p class="mb-2 mt-1">$4,673</p>
+                    <h5 class="card-title mb-1 pt-2">Total Income</h5>
+                    <p class="mb-2 mt-1">{{$total_income}}</p>
                     <div class="pt-1">
                         <span class="badge bg-label-secondary">+25.2%</span>
                     </div>
@@ -84,12 +83,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
-            <canvas id="muliChart" class="chartjs" data-height="500" height="625" width="1386"
-                style="display: block; box-sizing: border-box; height: 500px; width: 1108.8px;"></canvas>
-        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+            <canvas id="muliChart" class="chartjs" data-height="400" 
+                style="display: block; box-sizing: border-box; height: 400px; width: 100%;"></canvas>
+            </div>  
+        </div>     
     </div>
 
+    
     @push('cjs')
         <script src="/adminAsset/js/chartjs.js"></script>
         <script>
@@ -102,6 +105,7 @@
         </script>
 
         <script>
+            
             const ctx = document.getElementById('muliChart');
             ctx &&
                 new Chart(ctx, {
@@ -124,7 +128,7 @@
                                 pointHoverBackgroundColor: "tomato"
                             },
                             {
-                                data:  {{ json_encode( $income ) }},
+                                data:  {{ json_encode( $monthly_income ) }},
                                 label: "income",
                                 borderColor: "green",
                                 tension: .5,
@@ -195,7 +199,6 @@
                         }
                     }
                 })
-        </script>
-        
+        </script>       
     @endpush
 @endsection

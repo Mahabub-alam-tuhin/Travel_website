@@ -110,8 +110,9 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{{ asset('frontEndAsset') }}/img/about.jpg"
+                        <img class="position-absolute w-100 h-100 b-lazy" data-src="{{ asset('/') . $abouts->main_image}}" src="{{ asset('/') . $abouts->main_image}}"
                             style="object-fit: cover;">
+                            
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
@@ -123,13 +124,13 @@
                             sed diam duo</p>
                         <div class="row mb-4">
                             <div class="col-6">
-                                <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/about-1.jpg" alt="">
+                                <img class="img-fluid"  src="{{ asset('/') . $abouts->first_image}}" style="height:250px; alt="">
                             </div>
                             <div class="col-6">
-                                <img class="img-fluid" src="{{ asset('frontEndAsset') }}/img/about-2.jpg" alt="">
+                                <img class="img-fluid" src="{{ asset('/') . $abouts->second_image}}" style="height:250px; alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Book Now</a>
+                        <a href="{{ route('tour-packages') }}" class="btn btn-primary mt-1">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -582,7 +583,22 @@
                     console.log(err);
                 })
         }
+ 
+        var bLazy = new Blazy({
+        breakpoints: [{
 
+	}]
+      , success: function(element){
+	    setTimeout(function(){
+		// We want to remove the loader gif now.
+		// First we find the parent container
+		// then we remove the "loading" class which holds the loader image
+		var parent = element.parentNode;
+		parent.className = parent.className.replace(/\bloading\b/,'');
+	    }, 200);
+        }
+   });
+	
         
     </script>
     <!-- Blog End -->

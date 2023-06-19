@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\about;
+use App\Models\contact;
 use App\Models\destination;
 use App\Models\District;
 use App\Models\Division;
@@ -23,9 +25,10 @@ class travelController extends Controller
     $saveguides = Saveguide::all();
     $carousel = Savecarousel::all();
     $Destination = destination::all();
- 
+    $contacts = contact::first();
+    $abouts = about::first();
     $resorts=saveresort::with(['divisions','district','upazila','union'])->paginate(6);
-    return view('frontEnd.home.home',compact('resorts','divisions','districts','upazilas','unions','saveguides','carousel','Destination'));
+    return view('frontEnd.home.home',compact('resorts','divisions','districts','upazilas','unions','saveguides','carousel','Destination','contacts','abouts'));
    }
    public function details($id){
     $comment = saveComment::with(['reply'])->get();

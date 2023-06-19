@@ -71,8 +71,6 @@ class bookingSeeder extends Seeder
             $book->status = ["approved","accepted","pending"][rand(0,2)];
             $book->created_at="2023-05-01 10:05"; 
             $book->save();
-        }
-     
-       
+        }   
     }
 }

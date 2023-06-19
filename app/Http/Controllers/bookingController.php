@@ -18,6 +18,7 @@ class bookingController extends Controller
         $this->create->name = $request->name;
         $this->create->email = $request->email;
         $this->create->phone = $request->phone;
+        $this->create->price = $request->price;
         $this->create->address = $request->address;
         $this->create->save();
         return back()->with('message', 'info create successfully');

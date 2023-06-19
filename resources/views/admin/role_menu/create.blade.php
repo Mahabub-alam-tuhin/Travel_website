@@ -3,7 +3,7 @@
     <div class="row">
         <!-- Basic Layout -->
         <div class="col-xxl">
-            <form action="{{route('dashboard.saveRole')}}" method="post">
+            <form action="{{route('user.role.saveRole')}}" method="post">
                 @csrf
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">

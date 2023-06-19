@@ -21,6 +21,9 @@ use App\Http\Controllers\bookingController;
 use App\Http\Controllers\show_bookingController;
 use App\Http\Controllers\carouselController;
 use App\Http\Controllers\destinationController;
+use App\Http\Controllers\incomeController;
+use App\Http\Controllers\contactController;
+use App\Http\Controllers\aboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +67,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //    Route::get('/dashboard', function () {
     //        return view('dashboard');
     //    })->name('dashboard');
+
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/user-roles', [UserController::class, 'index'])->name('dashboard.user-roles');
     Route::post('/dashboard/saveUser', [UserController::class, 'saveUser'])->name('dashboard.saveUser');
@@ -73,13 +77,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard/delete-user/{id}', [UserController::class, 'delete'])->name('dashboard.delete-User');
     Route::get('/dashboard/details-user/{id}', [UserController::class, 'details'])->name('dashboard.details-User');
 
-    Route::prefix('role_menu')->group(function () {
-        Route::get('/create', [roleController::class, 'create'])->name('dashboard.create');
-        Route::post('/saveRole', [roleController::class, 'saveRole'])->name('dashboard.saveRole');
-        Route::get('/view', [roleController::class, 'view'])->name('dashboard.view');
-        Route::get('/edit/{id}', [roleController::class, 'edit'])->name('dashboard.edit');
-        Route::post('/update/{id}', [roleController::class, 'update'])->name('dashboard.update');
-        Route::get('/delete/{id}', [roleController::class, 'delete'])->name('dashboard.delete');
+    Route::prefix('role')->group(function () {
+        Route::get('/create', [roleController::class, 'create'])->name('user.role.create');
+        Route::post('/saveRole', [roleController::class, 'saveRole'])->name('user.role.saveRole');
+        Route::get('/view', [roleController::class, 'view'])->name('user.role.view');
+        Route::get('/edit/{id}', [roleController::class, 'edit'])->name('user.role.edit');
+        Route::post('/update/{id}', [roleController::class, 'update'])->name('user.role.update');
+        Route::get('/delete/{id}', [roleController::class, 'delete'])->name('user.role.delete');
     });
 
     Route::prefix('user_role')->group(function () {
@@ -211,6 +215,27 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 
     });
+    Route::get('/create', [incomeController::class, 'create'])->name('admin.income.create');
+    Route::post('/saveincome', [incomeController::class, 'saveincome'])->name('admin.income.saveincome');
 
+
+    Route::prefix('contact')->group(function () {
+        Route::get('/create', [contactController::class, 'create'])->name('admin.contact.create');
+        Route::post('/savecontact', [contactController::class, 'savecontact'])->name('admin.contact.savecontact');
+        Route::get('/view', [contactController::class, 'view'])->name('admin.contact.view');
+        Route::get('/delete/{id}', [contactController::class, 'delete'])->name('admin.contact.delete');
+
+
+    });
+
+    
+    Route::prefix('about')->group(function () {
+        Route::get('/create', [aboutController::class, 'create'])->name('admin.about.create');
+        Route::post('/saveabout', [aboutController::class, 'saveabout'])->name('admin.about.saveabout');
+        Route::get('/view', [aboutController::class, 'view'])->name('admin.about.view');
+        Route::get('/delete/{id}', [aboutController::class, 'delete'])->name('admin.about.delete');
+
+
+    });
   
 });

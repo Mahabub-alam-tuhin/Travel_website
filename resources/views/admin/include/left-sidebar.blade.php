@@ -2,25 +2,25 @@
     <!-- Dashboards -->
     <li class="menu-item">
         <a href="{{ route('dashboard') }}" class="menu-link">
-            <i class="menu-icon tf-icons ti ti-mail"></i>
+            <i class="fa-solid fa-house"style=margin:5px;></i>
             <div data-i18n="Dashboards">Dashboard</div>
         </a>
     </li>
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Users">User Management</div>
+            <div data-i18n="Users">User </div>
             <div class="badge bg-label-primary rounded-pill ms-auto">3</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
                 <a href="{{ route('dashboard.user-roles') }}" class="menu-link">
-                    <div data-i18n="create user">Roles</div>
+                    <div data-i18n="create user">create </div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="{{ route('dashboard.showUser') }}" class="menu-link">
-                    <div data-i18n="show user">show user</div>
+                    <div data-i18n="show user">All </div>
                 </a>
             </li>
         </ul>
@@ -30,29 +30,29 @@
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-file-circle-minus"style=margin:5px;></i>
             <div data-i18n="role menu">role menu</div>
 
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('dashboard.create') }}" class="menu-link">
-                    <div data-i18n="create role">create role</div>
+                <a href="{{ route('user.role.create') }}" class="menu-link">
+                    <div data-i18n="create role">user role</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('dashboard.view') }}" class="menu-link">
-                    <div data-i18n="view role">view role</div>
+                <a href="{{ route('user.role.view') }}" class="menu-link">
+                    <div data-i18n="view role">All role</div>
                 </a>
             </li>
         </ul>
     </li>
 
-{{--    user role--}}
+    {{--    user role --}}
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-user"style=margin:5px;></i>
             <div data-i18n="user role">user role</div>
 
         </a>
@@ -65,13 +65,12 @@
         </ul>
     </li>
 
-{{--    Permission menu--}}
+    {{--    Permission menu --}}
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-lock"style=margin:5px;></i>
             <div data-i18n="permission">permission</div>
-
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
@@ -88,10 +87,10 @@
     </li>
 
 
-{{--    permit--}}
+    {{--    permit --}}
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-caret-down"style=margin:5px;></i>
             <div data-i18n="permit">permit</div>
         </a>
         <ul class="menu-sub">
@@ -108,7 +107,7 @@
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-bars" style=margin:5px;></i>
             <div data-i18n="spot">spot</div>
 
         </a>
@@ -123,92 +122,93 @@
                     <div data-i18n="view">view</div>
                 </a>
             </li>
-        </ul>
-    </li>    
 
-    {{-- District Section --}}
 
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="District">District</div>
+            {{-- District Section --}}
 
-        </a>
-        <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('admin.district.create') }}" class="menu-link">
-                    <div data-i18n="create">create</div>
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="District">District</div>
+
                 </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.district.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.district.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
+
+            {{-- Division section --}}
+
             <li class="menu-item">
-                <a href="{{ route('admin.district.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="Division">Division</div>
+
                 </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.division.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.division.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
-        </ul>
-    </li>
 
-    {{-- Division section --}}
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Division">Division</div>
-
-        </a>
-        <ul class="menu-sub">
+            {{-- Union Section --}}
             <li class="menu-item">
-                <a href="{{ route('admin.division.create') }}" class="menu-link">
-                    <div data-i18n="create">create</div>
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="union">union</div>
+
                 </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.union.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.union.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="menu-item">
-                <a href="{{ route('admin.division.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
-            </li>
-        </ul>
-    </li>
 
-    {{-- Union Section --}}
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="union">union</div>
+            {{-- Upazila section --}}
 
-        </a>
-        <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('admin.union.create') }}" class="menu-link">
-                    <div data-i18n="create">create</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{ route('admin.union.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
-            </li>
-        </ul>
-    </li>
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="upazila">upazila</div>
 
-    {{-- Upazila section --}}
-
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="upazila">upazila</div>
-
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{ route('admin.upazila.create') }}" class="menu-link">
-                    <div data-i18n="create">create</div>
                 </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{ route('admin.upazila.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.upazila.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.upazila.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </li>
@@ -217,7 +217,7 @@
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <i class="fa-solid fa-folder" style=margin:5px;></i>
             <div data-i18n="resort_Management">resort_Management</div>
 
         </a>
@@ -232,105 +232,154 @@
                     <div data-i18n="view">view</div>
                 </a>
             </li>
+
+            {{-- tour_guideence --}}
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="fa-sharp fa-light fa-house-turret"></i>
+                    <div data-i18n="tour_guideence">tour_guideence</div>
+
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.tour_guideence.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.tour_guideence.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            {{-- comment reply --}}
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="fa-solid fa-message-dots"></i>
+                    <div data-i18n="comment_reply">comment_reply </div>
+
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.comment_reply.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- Booking form --}}
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="Booking_form">Booking Form </div>
+
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.show_booking.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            {{-- carousel --}}
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="carousel">carousel</div>
+
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.carousel.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.carousel.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            {{-- {{ Destination  }} --}}
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="Destination">Destination</div>
+
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('admin.destination.create') }}" class="menu-link">
+                            <div data-i18n="create">create</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.destination.view') }}" class="menu-link">
+                            <div data-i18n="view">view</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </li>
+    {{-- {{ Income  }} --}}
 
-    {{-- tour_guideence --}}
+    <li class="menu-item">
+        <a href="{{ route('admin.income.create') }}" class="menu-link">
+            <i class="fa-solid fa-money-check"style=margin:5px;></i>
+            <div data-i18n="Income">Income</div>
+        </a>
+    </li>
+
+    {{-- {{ Contact  }} --}}
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="tour_guideence">tour_guideence</div>
-
+            <i class="fa-regular fa-id-card"style=margin:5px;></i>
+           <div data-i18n="Contact">Contact</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('admin.tour_guideence.create') }}" class="menu-link">
+                <a href="{{ route('admin.contact.create') }}" class="menu-link">
                     <div data-i18n="create">create</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('admin.tour_guideence.view') }}" class="menu-link">
+                <a href="{{ route('admin.contact.view') }}" class="menu-link">
                     <div data-i18n="view">view</div>
                 </a>
             </li>
         </ul>
     </li>
-       
 
-    {{-- comment reply --}}
-
+    {{-- About section --}}
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="comment_reply">comment_reply </div>
-
+            <i class="fa-regular fa-id-card"style=margin:5px;></i>
+           <div data-i18n="about">About</div>
         </a>
         <ul class="menu-sub">
             <li class="menu-item">
-                <a href="{{ route('admin.comment_reply.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-      {{-- Booking form--}}
-
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Booking_form">Booking Form </div>
-
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{ route('admin.show_booking.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-     {{-- carousel --}}
-
-     <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="carousel">carousel</div>
-
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{ route('admin.carousel.create') }}" class="menu-link">
+                <a href="{{ route('admin.about.create') }}" class="menu-link">
                     <div data-i18n="create">create</div>
                 </a>
             </li>
             <li class="menu-item">
-                <a href="{{ route('admin.carousel.view') }}" class="menu-link">
-                    <div data-i18n="view">view</div>
-                </a>
-            </li>
-        </ul>
-    </li>
-
-
-    {{-- {{ Destination  }} --}}
-    
-    <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Destination">Destination</div>
-
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item">
-                <a href="{{ route('admin.destination.create') }}" class="menu-link">
-                    <div data-i18n="create">create</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="{{ route('admin.destination.view') }}" class="menu-link">
+                <a href="{{ route('admin.about.view') }}" class="menu-link">
                     <div data-i18n="view">view</div>
                 </a>
             </li>

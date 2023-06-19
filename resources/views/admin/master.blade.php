@@ -46,6 +46,11 @@
     <script src="/adminAsset/vendor/js/template-customizer.js"></script>
     <script src="/adminAsset/js/config.js"></script>
 
+
+    {{-- push link  --}}
+    <script src=(node_modules/push.js/bin/push.min.js,public/adminAsset/js/push.min.js)></script>
+    <script src="/adminAsset/js/push.min.js"></script>
+
 </head>
 
 <body>
@@ -135,6 +140,16 @@
                         </div>
                     </footer>
                     <!-- / Footer -->
+
+                    <script>
+                        (function($){
+
+                        }(jQuery));
+                        push.create('booked!',{
+                        Body:'welcome'  
+                        timeout:5000
+                        });
+                    </script>
 
                     <div class="content-backdrop fade"></div>
                 </div>

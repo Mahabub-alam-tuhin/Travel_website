@@ -27,6 +27,12 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <label for="inputPhoneNo2" class="col-sm-3 col-form-label">price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" value="{{  $details->price }}" name="price" class="form-control" id="inputPhoneNo2" placeholder="price No">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label for="inputAddress4" class="col-sm-3 col-form-label">address</label>
                                 <div class="col-sm-9">
                                     <textarea name="address" class="form-control" id="inputAddress4" rows="3" placeholder="Address">{{$details->address }}</textarea>
