@@ -74,5 +74,8 @@ class aboutController extends Controller
         $abouts = about::where('id', $id)->delete();
         return redirect()->route('admin.about.view');
     }
+    public function total($id){
+        
+    }
  
     }

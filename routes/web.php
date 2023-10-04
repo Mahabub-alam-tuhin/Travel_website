@@ -24,6 +24,9 @@ use App\Http\Controllers\destinationController;
 use App\Http\Controllers\incomeController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\aboutController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registercontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,9 +59,16 @@ Route::get('/details/{id}', [travelController::class, 'details'])->name('frontEn
 Route::get('/search', [travelController::class, 'search'])->name('frontEnd.search.search');
 
 
+Route::prefix ('login')->group(function(){
+    Route::get('/register',[loginController::class,'login'])->name('frontEnd.login.login');
+    Route::post('/store', [loginController::class, 'store'])->name('frontEnd.login.store');
+});
+Route::prefix ('register')->group(function(){
+    Route::get('/login', [registercontroller::class, 'register'])->name('frontEnd.register.register');
+});
 Route::prefix ('booking')->group(function(){
-    Route::get('/create/{id}',[bookingController::class,'create'])->name('frontEnd.booking.create');
-    Route::post('/saveBooking', [bookingController::class, 'saveBooking'])->name('frontEnd.booking.saveBooking');
+    Route::get('/create/{id}',[bookingController::class,'create'])->name('frontEnd.booking.create')->middleware('isadmin');
+    Route::post('/saveBooking', [bookingController::class, 'saveBooking'])->name('frontEnd.booking.saveBooking')->middleware('isadmin');
 
 });
 
@@ -68,7 +78,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //        return view('dashboard');
     //    })->name('dashboard');
 
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('issuperadmin');
     Route::get('/dashboard/user-roles', [UserController::class, 'index'])->name('dashboard.user-roles');
     Route::post('/dashboard/saveUser', [UserController::class, 'saveUser'])->name('dashboard.saveUser');
     Route::get('/dashboard/showUser', [UserController::class, 'showUser'])->name('dashboard.showUser');
@@ -234,8 +244,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::post('/saveabout', [aboutController::class, 'saveabout'])->name('admin.about.saveabout');
         Route::get('/view', [aboutController::class, 'view'])->name('admin.about.view');
         Route::get('/delete/{id}', [aboutController::class, 'delete'])->name('admin.about.delete');
-
-
     });
   
 });

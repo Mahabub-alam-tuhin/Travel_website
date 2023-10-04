@@ -19,14 +19,10 @@ class UserSeeder extends Seeder
         User::truncate();
         User::create([
          'name' =>'mahabub',
-         'email' =>'mahabub@gmail.com',
+         'email' =>'test@gmail.com',
+         'user_role' =>'2',
          'password' => Hash::make('12345678'),
         ]);
 
-        User::create([
-            'name' =>'Saheen',
-            'email' =>'Saheen@gmail.com',
-            'password' => Hash::make('12345678'),
-           ]);
     }
 }

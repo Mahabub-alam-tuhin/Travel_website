@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Booking;
+use App\Models\userRole_id;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             incomeSeeder::class
+        ]);
+        $this->call([
+            userRole_idSeeder::class
         ]);
     }
 }

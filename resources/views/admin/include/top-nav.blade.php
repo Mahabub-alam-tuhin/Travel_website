@@ -101,10 +101,15 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('home') }}" target="_blank">
-                            <i class="ti ti-logout me-2 ti-sm"></i>
-                            <span class="align-middle">Log Out</span>
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('logOutForm').submit()">
+                            <div class="d-flex align-items-center">
+                                <div class="setting-icon"><i class="bi bi-lock-fill"></i></div>
+                                <div class="setting-text ms-3"><span>Logout</span></div>
+                            </div>
                         </a>
+                        <form action="{{ route('logout') }}" method="post" id="logOutForm">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </li>

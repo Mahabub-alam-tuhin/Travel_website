@@ -50,21 +50,13 @@
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                     <a href="{{ route('service') }}" class="nav-item nav-link">Services</a>
                     <a href=" {{ route('tour-packages') }}" class="nav-item nav-link">Tour Packages</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                            <a href="destination.html" class="dropdown-item">Destination</a>
-                            <a href="guide.html" class="dropdown-item">Travel Guides</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
+                   
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+                    <a href="{{ route('frontEnd.login.login') }}" class="nav-item nav-link">Register</a>
+                    <a href="{{ route('frontEnd.register.register') }}" class="nav-item nav-link">login</a>
+
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                         logout_from.submit(); " role="button">
-
-
                         {{ __('Log Out') }}
                     </a>
                 </div>
