@@ -85,6 +85,7 @@ class resort_ManagementController extends Controller
         $saveresorts->upazila_id = $request->upazila_id;
         $saveresorts->union_id = $request->union_id;
         $saveresorts->guid_id = $request->guid_id;
+        $saveresorts->name = $request->name;
         $saveresorts->phone = $request->phone;
         $saveresorts->day = $request->day;
         $saveresorts->person = $request->person;

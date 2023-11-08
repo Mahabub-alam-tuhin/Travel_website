@@ -67,7 +67,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="name">name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" value="{{  $saveresorts->name }}" name="phone" id="name" class="form-control name-mask"
+                                    <input type="text" value="{{  $saveresorts->name }}" name="name" id="name" class="form-control name-mask"
                                         placeholder="658 799 8941" aria-label="658 799 8941"
                                         aria-describedby="basic-default-phone" />
                                 </div>
